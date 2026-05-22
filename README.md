@@ -79,7 +79,7 @@ The author constructs an original country-year panel dataset covering **29 NATO 
 
 **Dummy Variables:** `NATO` and `EU` membership by year (accounting for enlargement over time)
 
-**Alternative Variables:** EU Fiscal Rule Index (FRI) and log-transformed distance from each ally's capital to Moscow (Proximity)
+**Alternative Variables:** EU Fiscal Rule Index (`FRI`) and log-transformed distance from each ally's capital to Moscow (`Proximity`)
 
 ---
 
