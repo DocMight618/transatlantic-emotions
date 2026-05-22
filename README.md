@@ -137,6 +137,18 @@ Cleaned data, Python scraping scripts, Jupyter notebooks, and R Markdown analysi
 
 ---
 
+## License
+ 
+This work is licensed under a [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+ 
+You are free to share and adapt this material for any purpose, including commercially, as long as you give appropriate credit to the author:
+ 
+> Wang, Haoyan "Ken". *Transatlantic Emotions: An Emotional Perspective on Alliance Burden Sharing.* Master of Arts thesis, The University of Chicago, May 2026.
+ 
+[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+ 
+---
+
 ## Generative AI Statement
 
 ChatGPT was used to assist with debugging the Python scripts and sentiment analysis pipeline. All other components of the paper are original work of the author.
