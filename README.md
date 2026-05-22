@@ -18,10 +18,10 @@ This paper examines how emotions expressed in U.S. presidential speeches influen
 
 | File/Folder | Description |
 |---|---|
-| `data/` | Cleaned Transatlantic Emotions Dataset (TED) |
-| `scripts/` | Python scripts for web scraping and sentiment analysis pipeline |
-| `notebooks/` | Jupyter notebook visualizations |
-| `analysis/` | R Markdown files for regression models |
+| `Transatlantic Emotions Dataset` | Cleaned Transatlantic Emotions Dataset (TED) |
+| `requirements` | Required libraries used in the Jupyter notebbok and R Markdown file |
+| `Topic EI Analysis` | Jupyter notebook visualizations |
+| `Transatlantic Emotions` | R Markdown file for regression models |
 
 **Contact:** Haoyan Wang — hkwang925@gmail.com
 
