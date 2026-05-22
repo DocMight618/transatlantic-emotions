@@ -61,7 +61,73 @@ summary(full2)
 
 full2_fe <- full <- plm(RDef ~ lag(anger, 1) + lag(fear, 1) + lag(joy, 1) + lag(sadness, 1) + lag(disgust, 1) + lag(surprise, 1) + lag(Sentiment, 1) + lag(Dem, 1) + lag(IntrastCon, 1), data = p_data, subset = NATO == 1, model = "within")
 summary(full2_fe)
+```
 
+
+```{r}
+library(tidyverse)
+library(broom)
+
+# --- Tidy model outputs ---
+models_list <- list(
+  "Pooling, no controls"      = full,
+  "FE, no controls"           = full_fe,
+  "Pooling, with controls"    = full2,
+  "FE, with controls"         = full2_fe
+)
+
+coef_df <- imap_dfr(models_list, ~ {
+  tidy(.x) %>%
+    mutate(model = .y)
+}) %>%
+  filter(str_detect(term, "lag\\(")) %>%
+  mutate(
+    term = term %>%
+      str_remove("lag\\(") %>%
+      str_remove(", 1\\)") %>%
+      str_c(" (t−1)"),
+    conf.low  = estimate - 1.96 * std.error,
+    conf.high = estimate + 1.96 * std.error,
+    model = factor(model, levels = names(models_list))
+  )
+
+# --- Plot ---
+model_colors <- c(
+  "Pooling, no controls"   = "#378ADD",
+  "FE, no controls"        = "#1D9E75",
+  "Pooling, with controls" = "#D85A30",
+  "FE, with controls"      = "#7F77DD"
+)
+
+ggplot(coef_df, aes(x = estimate, y = term, color = model)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60", linewidth = 0.4) +
+  geom_errorbarh(
+    aes(xmin = conf.low, xmax = conf.high),
+    height = 0,
+    linewidth = 0.8,
+    position = position_dodgev(height = 0.6)
+  ) +
+  geom_point(
+    size = 2.5,
+    position = position_dodgev(height = 0.6)
+  ) +
+  scale_color_manual(values = model_colors) +
+  scale_y_discrete(limits = rev) +
+  labs(
+    x     = "Coefficient estimate (95% CI)",
+    y     = NULL,
+    color = NULL,
+    caption = "Whiskers = 95% CI. Outcome: RDef. Sample: NATO = 1."
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    legend.position   = "top",
+    legend.text       = element_text(size = 11),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor   = element_blank(),
+    axis.text.y        = element_text(color = "grey20"),
+    plot.caption       = element_text(size = 9, color = "grey50")
+  )
 ```
 ###The European Model 
 
