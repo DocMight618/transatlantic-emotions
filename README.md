@@ -133,7 +133,7 @@ The paper concludes that non-material factors — specifically presidential emot
 
 ## Data & Code Availability
 
-Cleaned data, Python scraping scripts, Jupyter notebooks, and R Markdown analysis files are available in the project GitHub repository. For supplementary materials, contact the author at **hkwang925@gmail.com**.
+Cleaned data, Python scraping scripts, Jupyter notebooks, and R Markdown analysis files are available in this GitHub repository. For supplementary materials, contact the author at **hkwang925@gmail.com**.
 
 ---
 
