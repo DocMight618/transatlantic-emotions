@@ -8,9 +8,11 @@
 
 ---
 
-## Abstract
+## Brief Summary
 
 This paper examines how emotions expressed in U.S. presidential speeches influence NATO allies' defense spending behavior in the post-Cold War period. Using a custom Python scraper, the author collected 8,137 NATO-relevant speeches from the American Presidency Project and applied the DistilBERT large language model to quantify six emotions — anger, fear, sadness, joy, disgust, and surprise — in each speech. These emotion scores were incorporated into an original country-year panel dataset and tested using multiple regression models. Results show that **anger, fear, and sadness** are the most statistically significant emotions. Notably, presidential anger is positively associated with allied defense spending (interpreted as appeasement), while fear and sadness are negatively associated with it.
+
+**Key Words:** NATO, European Security, Emotions, Alliance Burden Sharing, Natural Language Processing (NLP)
 
 ---
 
